@@ -1,4 +1,4 @@
-let arr = [];
+let arr = [1,2,3,4,5,6,7,8,9,10];
 let target = 2
 
 
@@ -15,4 +15,4 @@ while(first<=last){
 }}
 
 
-console.log(bin_search(arr,target))
+console.log(bin_search(arr,6))

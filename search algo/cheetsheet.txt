@@ -1,0 +1,5 @@
+BIG O GUIDE
+
+loop  - O(n)
+nested loop - O(n^2)
+input size reduced by half - O(logn)
