@@ -1,7 +1,7 @@
 class Node{
     //constructor is a special class
     //it will be called whenever we create an object to the class
-    constructor(data) {
+    constructor(data){
         this.data = data;
         this.next = null;
     } 
@@ -9,10 +9,10 @@ class Node{
 
 
 
-let node1 = new Node(3);
+/* let node1 = new Node(3);
 let node2 = new Node(5);
 node1.next = node2;
-node2.next = new Node(7)
+node2.next = new Node(7) */
 
 //console.log(node2.next.next);
 
@@ -42,19 +42,72 @@ Node {
         }
     }
 
-    insertAtHead(){}
+    insertAtHead(data){
+        let newNode = new Node(data);
+        newNode.next = this.head
+        this.head = newNode
+        
+    }
 
-    deleteAtHead(){}
+    deleteAtHead(){
+        if(this.head != null){
+            this.head = this.head.next
+        }
+    }
 
-    deleteAtNode(){}
+    deleteAtTail(){
+        if(this.head != null){
+            if(this.head.next == null)  this.head == null
+            else{
+                let thead = this.head
+            while(thead.next.next != null){
+                thead = thead.next
+            }
+            thead.next = null
+            }
+        }
+    }
 
-    length(){}
+
+    length() {
+        let nodeCount = 0
+        let thead = this.head
+
+        while(thead != null){
+            nodeCount++
+            thead = thead.next
+        }
+        return nodeCount
+    }
+
+    toArray(){
+        let nodeArr = [];
+        let thead = this.head
+
+        while(thead != null){
+            nodeArr.push(thead.data)
+            thead = thead.next
+        }
+        return nodeArr
+    }
 
 }
     
 let list = new LinkedList();
-list.insertAtTail(3);
-list.insertAtTail(4);
-list.insertAtTail(5);
+ list.insertAtHead(3);
+ list.insertAtTail(4);
+ list.insertAtHead(5);
+ list.insertAtHead(17);
+ list.insertAtTail(19);
+ console.log(JSON.stringify(list))
+ console.log(list.toArray())
+ console.log(list.length())
 
-console.log(JSON.stringify(list));
+
+
+
+/* 
+list =  LinkedList{
+    head: Node
+}
+ */
